@@ -11,17 +11,12 @@ import io.cucumber.junit.CucumberOptions;
 	    glue = {"StepDefination"},
 	    dryRun = false,
 	    monochrome = true,
-	    plugin ={"pretty","html:target//Cucumber-reports/reports/reports1.html"}
+	    plugin ={"pretty","junit:target//Cucumber-reports/reports/report_xml.xml"}
 	)
 
-//@CucumberOptions(
-//		    features = "Features", // update if different
-////		features = ".//Features/LoginFeature.feature",
-//				glue = {"/CucumberFramework/src/test/java/StepDefination"},  // update if different
-////		glue = "/CucumberFramework/src/test/java/StepDefination" ,  // update if different
-//        dryRun = false,
-//        monochrome = true,
-//        plugin = "pretty")
+// plugin ={"pretty","html:target//Cucumber-reports/reports/reports1.html"}
+//plugin ={"pretty","json:target//Cucumber-reports/reports/report_json.json"}
+//plugin ={"pretty","junit:target//Cucumber-reports/reports/report_xml.xml"}
 
 public class Run {
 
