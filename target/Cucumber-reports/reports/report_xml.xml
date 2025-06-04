@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="10.501" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-05-27T17:54:14.619678300Z">
-<testcase classname="Login" name="Successful Login with valid credentials" time="4.31">
+<testsuite name="Cucumber" time="0.184" tests="4" skipped="0" failures="1" errors="0" timestamp="2025-06-01T10:44:35.531780300Z">
+<testcase classname="Form filling" name="" time="0.011">
+<failure/>
+<system-out><![CDATA[
+Given User Launch chrome Browser............................................passed
+When user opens URL "https://practice-automation.com/form-fields/"..........passed
+And user enters name "abc" and password "def" and message "this is message".undefined
+And user clicks submit button...............................................skipped
+Then alert message contains "Message received!".............................skipped
+Then use clicks on alert ok.................................................skipped
+And close browser...........................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Successful Login with valid credentials" time="0">
 <system-out><![CDATA[
 Given User Launch chrome Browser............................................passed
 When user opens URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F".passed
@@ -12,7 +24,7 @@ Then page Title should be "Your Store. Login"...............................pass
 And close browser...........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login" name="Successful Login with valid credentials DDT - #1.1" time="2.954">
+<testcase classname="Login" name="Successful Login with valid credentials DDT - #1.1" time="0.001">
 <system-out><![CDATA[
 Given User Launch chrome Browser............................................passed
 When user opens URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F".passed
@@ -24,7 +36,7 @@ Then page Title should be "Your Store. Login"...............................pass
 And close browser...........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login" name="Successful Login with valid credentials DDT - #1.2" time="3.096">
+<testcase classname="Login" name="Successful Login with valid credentials DDT - #1.2" time="0">
 <system-out><![CDATA[
 Given User Launch chrome Browser............................................passed
 When user opens URL "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F".passed

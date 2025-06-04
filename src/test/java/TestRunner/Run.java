@@ -7,11 +7,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-	    features = "Features",
+	    features = {"Features/LoginFeature.feature"},
 	    glue = {"StepDefination"},
 	    dryRun = false,
 	    monochrome = true,
-	    plugin ={"pretty","junit:target//Cucumber-reports/reports/report_xml.xml"}
+	    tags = "@sanity", // to execute only sanity tagged 
+	    plugin ={"pretty","html:target//Cucumber-reports/reports/reports1.html"}
 	)
 
 // plugin ={"pretty","html:target//Cucumber-reports/reports/reports1.html"}
