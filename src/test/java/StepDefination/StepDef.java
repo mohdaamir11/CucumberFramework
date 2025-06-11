@@ -1,16 +1,22 @@
 package StepDefination;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import PageObject.AddNewFormPage;
 import PageObject.LoginPage;
+import Utilities.ReadConfig;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -26,14 +32,38 @@ public class StepDef extends BaseClass {
 
 	
 	@Before("@sanity")      // these are conditional hooks - this will only run for sanity tagged scenarios
-	public void setup1() {
+	public void setup1() throws IOException {
 		
 		log = LogManager.getLogger("StepDef.class"); 
 		
 		System.out.println("setup1 sanity before method executed");
 		
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		readconf = new ReadConfig();
+		String browser = readconf.getBrowser();
+		
+		//launch browser
+				switch(browser.toLowerCase())
+				{
+				case "chrome":
+					WebDriverManager.chromedriver().setup();
+					driver = new ChromeDriver();
+					break;
+
+				case "msedge":
+					WebDriverManager.edgedriver().setup();
+					driver = new EdgeDriver();
+					break;
+
+				case "firefox":
+					WebDriverManager.firefoxdriver().setup();
+					driver = new FirefoxDriver();
+					break;
+				default:
+					driver = null;
+					break;
+
+				}
+		
 		log.info("Setup1 executed...");
 		
 	}

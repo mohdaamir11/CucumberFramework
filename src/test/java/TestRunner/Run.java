@@ -2,10 +2,13 @@ package TestRunner;
 
 import org.junit.runner.RunWith;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;  // for running with Testng
+import io.cucumber.testng.CucumberOptions;           // for running with Testng
 
-@RunWith(Cucumber.class)
+//import io.cucumber.junit.Cucumber;               // for running with junit
+//import io.cucumber.junit.CucumberOptions;         // for running with junit
+
+//@RunWith(Cucumber.class)            // for running with junit
 @CucumberOptions(
 	    features = {"Features/LoginFeature.feature"},
 	    glue = {"StepDefination"},
@@ -19,7 +22,7 @@ import io.cucumber.junit.CucumberOptions;
 //plugin ={"pretty","json:target//Cucumber-reports/reports/report_json.json"}
 //plugin ={"pretty","junit:target//Cucumber-reports/reports/report_xml.xml"}
 
-public class Run {
+public class Run extends AbstractTestNGCucumberTests {
 
 	// this class will be empty  
 
